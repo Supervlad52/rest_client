@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "rest-client"
+version = "0.1.0"
+description = "rest client for testing with log"
+authors = ["Supervlad52 <vlad.pestov52@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "restclient" }]
+
+#dependencies = { python = ">=3.10,<4.0", curlify2 = "^2.0.0", structlog = "^25.4.0", httpx = "^0.28.1", allure-pytest = "^2.15.0", swagger-coverage = { url = "https://github.com/Supervlad52/swagger-coverage-py/archive/refs/heads/master.zip" } }
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+curlify2 = "^2.0.0"
+structlog = "^25.4.0"
+httpx = "^0.28.1"
+allure-pytest = "^2.15.0"
+swagger-coverage = { url = "https://github.com/Supervlad52/swagger-coverage-py/archive/refs/heads/master.zip"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
