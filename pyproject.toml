@@ -6,6 +6,7 @@ authors = [
     { name = "Supervlad52", email = "vlad.pestov52@gmail.com" }
 ]
 readme = "README.md"
+packages = [{include = "rest_client"}]
 requires-python = ">=3.10,<4.0"
 
 dependencies = [
