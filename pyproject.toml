@@ -1,21 +1,26 @@
-[tool.poetry]
+[project]
 name = "rest-client"
 version = "0.1.0"
-description = "rest client for testing with log"
-authors = ["Supervlad52 <vlad.pestov52@gmail.com>"]
+description = "REST client for testing with log"
+authors = [
+    { name = "Supervlad52", email = "vlad.pestov52@gmail.com" }
+]
 readme = "README.md"
-packages = [{ include = "restclient" }]
+requires-python = ">=3.10,<4.0"
 
-#dependencies = { python = ">=3.10,<4.0", curlify2 = "^2.0.0", structlog = "^25.4.0", httpx = "^0.28.1", allure-pytest = "^2.15.0", swagger-coverage = { url = "https://github.com/Supervlad52/swagger-coverage-py/archive/refs/heads/master.zip" } }
-[tool.poetry.dependencies]
-python = ">=3.10,<4.0"
-curlify2 = "^2.0.0"
-structlog = "^25.4.0"
-httpx = "^0.28.1"
-allure-pytest = "^2.15.0"
-swagger-coverage = { url = "https://github.com/Supervlad52/swagger-coverage-py/archive/refs/heads/master.zip"}
-pyyaml = "^6.0.2"
+dependencies = [
+    "swagger-coverage @ git+https://github.com/Supervlad52/swagger-coverage-py.git@master",
+    "httpx (>=0.28.1,<0.29.0)",
+    "curlify2 (>=2.0.0,<3.0.0)",
+    "attrs (>=25.3.0,<26.0.0)",
+    "pydantic (>=2.11.7,<3.0.0)"
+]
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.2"
+mypy = "^1.17.1"
+ruff = "^0.13.0"
